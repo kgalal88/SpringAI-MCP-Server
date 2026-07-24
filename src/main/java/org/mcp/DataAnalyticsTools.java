@@ -1,13 +1,11 @@
 package org.mcp;
 
-import jakarta.annotation.PostConstruct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.ai.tool.annotation.Tool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
-import org.stringtemplate.v4.ST;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -145,49 +143,5 @@ public class DataAnalyticsTools {
         );
         return LocalDateTime.now().format(formatter);
     }
-    public static class UserActivitySummary {
-        private String userId;
-        private int totalActions;
-        private int totalScore;
-        private String createdDate;
-        public UserActivitySummary(String userId, int totalActions, int totalScore) {
-            this.userId = userId;
-            this.totalActions = totalActions;
-            this.totalScore = totalScore;
-        }
-        public UserActivitySummary(String userId, int totalScore, String createdDate) {
-            this.userId = userId;
-            this.totalScore = totalScore;
-            this.createdDate = createdDate;
-        }
-        // Getters
-        public String getUserId() { return userId; }
-        public int getTotalActions() { return totalActions; }
-        public int getTotalScore() { return totalScore; }
-        public String getCreatedDate() { return createdDate; }
-    }
 
-    public static class UsersSummary {
-        private String userId;
-        private String name;
-        private int age;
-
-        public UsersSummary(String userId, String name, int age) {
-            this.userId = userId;
-            this.name = name;
-            this.age = age;
-        }
-
-        public String getUserId() {
-            return userId;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public int getAge() {
-            return age;
-        }
-    }
 }
