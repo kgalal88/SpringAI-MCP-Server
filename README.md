@@ -366,7 +366,8 @@ logging:
 The server can be tested using:
 
 - Postman
-<img width="817" height="490" alt="image" src="https://github.com/user-attachments/assets/93501825-745f-4f67-9936-361af1dc0cdd" />
+<img width="812" height="615" alt="image" src="https://github.com/user-attachments/assets/9d75647e-726d-45e0-b018-19e3e2e2358c" />
+
 <img width="1887" height="870" alt="image" src="https://github.com/user-attachments/assets/73c6d880-6d5f-462f-a7c5-1fb502144c0c" />
 
 - MCP Inspector
