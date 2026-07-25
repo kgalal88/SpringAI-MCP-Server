@@ -368,11 +368,15 @@ The server can be tested using:
 - Postman
 <img width="812" height="615" alt="image" src="https://github.com/user-attachments/assets/9d75647e-726d-45e0-b018-19e3e2e2358c" />
 <img width="1887" height="870" alt="image" src="https://github.com/user-attachments/assets/73c6d880-6d5f-462f-a7c5-1fb502144c0c" />
+
 - Custom MCP Clients (for a sample SpringAI MCP Client, please refer to this repo: https://github.com/kgalal88/SpringAI-MCP-Client/)
+  
 - Claude Desktop
 <img width="1106" height="968" alt="image" src="https://github.com/user-attachments/assets/0bc48d7f-11ac-445f-97be-1adaccefe49a" />
 <img width="1106" height="979" alt="image" src="https://github.com/user-attachments/assets/5677a336-61b5-4d24-a78b-48025d520076" />
+
 - Cursor
+  
 - VS Code MCP Extensions
 
 ---
