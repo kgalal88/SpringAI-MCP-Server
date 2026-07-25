@@ -399,8 +399,8 @@ https://medium.com/@khalid.mtwaly/building-an-ai-powered-mcp-application-with-sp
 
 ---
 
-## Contributing
+## 👤 Author
 
-Contributions, issues, and feature requests are welcome.
+**Khalid Galal**
 
-If you find this project useful, consider giving it a ⭐ on GitHub.
+**https://www.linkedin.com/in/khalidgalal**
