@@ -32,14 +32,14 @@ public class DataAnalyticsTools {
 
         return new UserActivitySummary(
                 userId,
-                ((Number) result.get("total_actions")).intValue(),
-                ((Number) result.get("total_score")).intValue()
+                (result.get("total_actions") != null ? ((Number) result.get("total_actions")).intValue() : 0),
+                (result.get("total_score") != null ? ((Number) result.get("total_score")).intValue() : 0)
         );
     }
 
-    @Tool(description = "Get users data summary from database")
-    public List<UserActivitySummary> getUserAllActivity() {
-        logger.info("Getting users all activity data");
+    @Tool(description = "Get all users data summary from database")
+    public List<UserActivitySummary> getAllUserActivity() {
+        logger.info("Getting all users activity data");
 
         List<UserActivitySummary> userActivitySummaryList = new ArrayList<>();
 
@@ -48,12 +48,11 @@ public class DataAnalyticsTools {
 
             List<Map<String, Object>> result = jdbcTemplate.queryForList(sql);
 
-
             if (result != null && !result.isEmpty()) {
                 result.forEach(r -> {
                     userActivitySummaryList.add(new UserActivitySummary(
                             r.get("user_id").toString(),
-                            ((Number) r.get("score")).intValue(),
+                            (r.get("score") != null ? ((Number) r.get("score")).intValue() : 0),
                             r.get("created_date").toString()
                     ));
                 });
@@ -65,7 +64,7 @@ public class DataAnalyticsTools {
         return userActivitySummaryList;
     }
 
-    @Tool(description = "Get users data summary from database")
+    @Tool(description = "Get users all activity data by id from database")
     public List<UserActivitySummary> getUserActivityById(String userId) {
         logger.info("Getting users all activity data by id: {}", userId);
 
@@ -76,12 +75,11 @@ public class DataAnalyticsTools {
 
             List<Map<String, Object>> result = jdbcTemplate.queryForList(sql, userId);
 
-
             if (result != null && !result.isEmpty()) {
                 result.forEach(r -> {
                     userActivitySummaryList.add(new UserActivitySummary(
                             r.get("user_id").toString(),
-                            ((Number) r.get("score")).intValue(),
+                            (r.get("score") != null ? ((Number) r.get("score")).intValue() : 0),
                             r.get("created_date").toString()
                     ));
                 });
@@ -93,9 +91,9 @@ public class DataAnalyticsTools {
         return userActivitySummaryList;
     }
 
-    @Tool(description = "Get users data summary by ID from database")
+    @Tool(description = "Get users profile data by id from database")
     public UsersSummary getUsersById(String userId) {
-        logger.info("Getting users data for: {}", userId);
+        logger.info("Getting users profile data for: {}", userId);
 
         String sql = "SELECT * FROM users WHERE user_id = ?";
 
@@ -104,13 +102,13 @@ public class DataAnalyticsTools {
         return new UsersSummary(
                 userId,
                 result.get("name").toString(),
-                ((Number) result.get("age")).intValue()
+                (result.get("age") != null ? ((Number) result.get("age")).intValue() : 0)
         );
     }
 
-    @Tool(description = "Get users data summary from database")
+    @Tool(description = "Get all users profile data from database")
     public List<UsersSummary> getUsers() {
-        logger.info("Getting users data");
+        logger.info("Getting users profile data");
 
         List<UsersSummary> usersSummaryList = new ArrayList<>();
 
@@ -119,13 +117,12 @@ public class DataAnalyticsTools {
 
             List<Map<String, Object>> result = jdbcTemplate.queryForList(sql);
 
-
             if (result != null && !result.isEmpty()) {
                 result.forEach(r -> {
                     usersSummaryList.add(new UsersSummary(
                             r.get("user_id").toString(),
                             r.get("name").toString(),
-                            ((Number) r.get("age")).intValue()
+                            (r.get("age") != null ? ((Number) r.get("age")).intValue() : 0)
                     ));
                 });
             }
