@@ -189,6 +189,20 @@ The server starts on
 http://localhost:8081
 ```
 
+## 🐳 Docker Support
+
+To build the container:
+
+```bash
+docker build -t chat-mcp-server:latest .
+```
+
+To run:
+
+```bash
+docker run -d -p 9091:8081 --name my-ai-mcp-server chat-mcp-server:latest
+```
+
 ---
 
 ## MCP Endpoints
@@ -380,7 +394,6 @@ The server can be tested using:
 - Authentication & Authorization
 - Pagination
 - Tool result streaming
-- Docker support
 - Kubernetes deployment
 - OpenTelemetry integration
 
